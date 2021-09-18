@@ -1,0 +1,15 @@
+.transcription-result {
+  position: fixed !important;
+  z-index: 1 !important;
+
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 28px;
+  padding: 10px;
+  text-align: center;
+
+  background: rgb(0, 0, 0, 0.75);
+  color: white;
+}

@@ -1,5 +1,5 @@
 const transcription = document.createElement("span");
-transcription.id = "resultnya";
+
 transcription.classList.add("transcription-result");
 document.body.appendChild(transcription);
 

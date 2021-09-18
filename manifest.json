@@ -14,5 +14,10 @@
       "css": ["styles/transcription.css"]
     }
   ],
+  "icons": {
+    "16": "assets/gimana2-icon.png",
+    "48": "assets/gimana2-icon.png",
+    "128": "assets/gimana2-icon.png"
+  },
   "permissions": ["activeTab"]
 }

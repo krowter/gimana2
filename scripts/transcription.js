@@ -1,6 +1,8 @@
 const transcription = document.createElement("span");
 
 transcription.classList.add("transcription-result");
+transcription.classList.add("initial");
+
 document.body.appendChild(transcription);
 
 const initialOptions = {
@@ -16,6 +18,9 @@ let result = "",
 
 chrome.runtime.onMessage.addListener(({ data }) => {
   if (data !== "start") return;
+
+  transcription.classList.remove("initial");
+
   try {
     recognition = new webkitSpeechRecognition();
   } catch {

@@ -13,3 +13,7 @@
   background: rgb(0, 0, 0, 0.75);
   color: white;
 }
+
+.initial {
+  display: none;
+}

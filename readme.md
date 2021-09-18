@@ -1,4 +1,4 @@
-#gimana2
+# gimana2
 
 _gimana2_ is a Chrome extension that displays audio transcription of web content. Since not all Youtube videos offers captioning,_gimana2_ provides a way for people who prefers text to understand the content.
 

@@ -12,7 +12,8 @@ let result = "",
   offset = 90, // max characters in transcription result before being cleared
   offsetIndex = 0;
 
-chrome.runtime.onMessage.addListener(() => {
+chrome.runtime.onMessage.addListener(({ data }) => {
+  if (data !== "start") return;
   try {
     recognition = new webkitSpeechRecognition();
   } catch {

@@ -1,13 +1,22 @@
-let recognition;
+let recognition,
+  transcriptionResult,
+  isRecognizing = false;
 
-const handleChangeLanguage = val => {
-  console.log(val);
-};
+chrome.runtime.onMessage.addListener(
+  ({ type, message }, sender, sendResponse) => {
+    switch (type) {
+      case "toggle-transcription":
+        if (isRecognizing) {
+          onStopTranscription();
+        } else {
+          onStartTranscription();
+        }
 
-chrome.runtime.onMessage.addListener(({ type, message }) => {
-  switch (type) {
-    case "toggle-transcription":
-      onStartTranscription();
-      break;
+        isRecognizing = !isRecognizing;
+        break;
+      case "change-language":
+        onChangeLanguage(message);
+        break;
+    }
   }
-});
+);

@@ -1,9 +1,9 @@
 const onStartTranscription = () => {
-  const transcription = document.createElement("span");
+  transcriptionResult = document.createElement("span");
 
-  transcription.classList.add("transcription-result");
+  transcriptionResult.classList.add("transcription-result");
 
-  document.body.appendChild(transcription);
+  document.body.appendChild(transcriptionResult);
 
   const initialOptions = {
     lang: "id",
@@ -23,7 +23,7 @@ const onStartTranscription = () => {
   Object.assign(recognition, initialOptions);
 
   recognition.onresult = event => {
-    if (transcription.textContent.length > offset) {
+    if (transcriptionResult.textContent.length > offset) {
       offsetIndex++;
     }
 
@@ -31,8 +31,18 @@ const onStartTranscription = () => {
       .map(result => result[0].transcript)
       .join(" ");
 
-    transcription.textContent = result.slice(offsetIndex * offset);
+    transcriptionResult.textContent = result.slice(offsetIndex * offset);
   };
 
   recognition.start();
+};
+
+const onStopTranscription = () => {
+  recognition.stop();
+  transcriptionResult.remove();
+};
+
+const onChangeLanguage = language => {
+  onStopTranscription();
+  recognition.lang = language;
 };

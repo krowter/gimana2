@@ -10,11 +10,12 @@ const sendMessage = (tabId, data, response = () => {}) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const transcribeButton = document.getElementById("start-transcription");
-  const languageToggler = document.getElementById("language-toggle");
 
   transcribeButton.addEventListener("click", () =>
     getActiveTab(tabId => sendMessage(tabId, { type: "toggle-transcription" }))
   );
+
+  const languageToggler = document.getElementById("language-toggle");
 
   languageToggler.addEventListener("change", event => {
     getActiveTab(tabId =>

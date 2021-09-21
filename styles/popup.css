@@ -1,0 +1,8 @@
+#language-toggle-wrapper {
+  padding: 20px;
+}
+
+#language-toggle .language-select {
+  font-size: 20px;
+  padding: 5px;
+}

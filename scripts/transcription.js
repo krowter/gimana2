@@ -6,7 +6,8 @@ const handleChangeLanguage = val => {
 
 chrome.runtime.onMessage.addListener(({ type, message }) => {
   switch (type) {
-    case "start-transcription":
-      onStartTranscription(recognition);
+    case "toggle-transcription":
+      onStartTranscription();
+      break;
   }
 });
